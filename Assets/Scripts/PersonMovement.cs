@@ -14,8 +14,11 @@ public class PersonMovement : MonoBehaviour
     Rigidbody _rb;
     Rigidbody rb { get { if (!_rb) _rb = GetComponent<Rigidbody>(); return _rb; } }
 
+    public Vector3 gotoDestination;
+
     public void GoTo(Vector3 pos)
     {
+        gotoDestination = pos;
         agent.destination = pos;
     }
 
@@ -31,22 +34,44 @@ public class PersonMovement : MonoBehaviour
 
     public void Knock(Vector3 force)
     {
+        Vector3 velo = agent.velocity;
         agent.enabled = false;
-        rb.AddForce(force);
+        rb.isKinematic = false;
+        rb.velocity = velo;
+        rb.AddForce(force * 500);
         knocking = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!agent.enabled && knocking)
+        {
+            knocking = false;
+        }
+    }
+
+    void TurnNavmeshOn()
+    {
+        agent.enabled = true;
+        knocking = false;
+        rb.isKinematic = true;
+
+        agent.SetDestination(gotoDestination);
     }
 
     void Update()
     {
+        Debug.Log(agent.isOnNavMesh);
+
         if (Input.GetKeyDown(KeyCode.G))
             Knock(Vector3.up);
 
-        if (!agent.enabled && knocking)
+        if (!agent.enabled && !knocking && agent.isOnNavMesh)
         {
-            agent.enabled = true;
+            agent.SetDestination(gotoDestination);
         }
 
-        Vector3 velo = agent.desiredVelocity;
+        //Vector3 velo = agent.desiredVelocity;
         //rb.velocity = velo;
 
         //agent.velocity = Vector3.right;
