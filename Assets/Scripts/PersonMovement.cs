@@ -20,6 +20,9 @@ public class PersonMovement : MonoBehaviour
     Vector3[] results;
     public NavMeshQueryFilter filter;
 
+    public Transform leftArm;
+    public Transform rightArm;
+
     public void GoTo(Vector3 pos)
     {
         gotoDestination = pos;
@@ -40,6 +43,11 @@ public class PersonMovement : MonoBehaviour
 
     public LayerMask raycastLayermask;
 
+    float groundVelocity;
+    float groundTrack;
+
+    Vector2 lastGroundPos;
+
     void Update()
     {
         Vector3 groundNormal = Vector3.up;
@@ -57,17 +65,29 @@ public class PersonMovement : MonoBehaviour
             rb.drag = 1;
         }
 
+        Vector2 groundPos = new Vector2(transform.position.x, transform.position.z);
+        Vector2 groundDiff = lastGroundPos - groundPos;
+        lastGroundPos = groundPos;
+        float groundVelocity = groundDiff.magnitude;
+        groundTrack += groundVelocity;
+
         if (NavMesh.CalculatePath(transform.position, gotoDestination, filter, path))
         {
             path.GetCornersNonAlloc(results);
 
             Vector3 diff = results[1] - transform.position;
             diff.y = Mathf.Clamp(diff.y, 0, Mathf.Infinity);
+            groundVelocity = diff.magnitude;
             if (diff.magnitude < 0.1f) diff = diff.normalized * 0.1f;
             else
                 diff = Vector3.ClampMagnitude(diff, 1);
 
             diff = Vector3.ProjectOnPlane(diff, groundNormal);
+
+            Vector3 rotDir = diff;
+            rotDir.y = 0;
+            Quaternion targetRot = Quaternion.LookRotation(rotDir);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * 10);
 
             Debug.DrawRay(hit.point, diff, Color.blue);
 
@@ -77,8 +97,11 @@ public class PersonMovement : MonoBehaviour
             Debug.DrawRay(results[1], Vector3.up, Color.red);
         }
 
-
-
         //Debug.Log(grounded);
+
+        float angleL = Mathf.Sin(groundTrack * 2) * 60;
+        float angleR = Mathf.Sin(groundTrack * 2 + Mathf.PI) * 60;
+        leftArm.transform.localRotation = Quaternion.Euler(angleL, 0, 0);
+        rightArm.transform.localRotation = Quaternion.Euler(angleR, 0, 0);
     }
 }

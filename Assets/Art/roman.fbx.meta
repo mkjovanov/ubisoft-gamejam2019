@@ -1,0 +1,208 @@
+fileFormatVersion: 2
+guid: 51300d092a7182d4bbfb587dbb0ae00c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: roman_arm_l
+    100004: roman_arm_r
+    100006: roman_arm_l.001
+    100008: roman_arm_l.002
+    100010: roman_arm_l.003
+    100012: roman_arm_l.004
+    100014: roman_arm_r.001
+    100016: roman_arm_r.002
+    100018: roman_arm_r.003
+    100020: roman_arm_r.004
+    100022: roman_body
+    100024: roman_body.001
+    100026: roman_body.002
+    100028: roman_body.003
+    100030: roman_body.004
+    100032: roman_griva
+    100034: roman_helmet
+    400000: //RootNode
+    400002: roman_arm_l
+    400004: roman_arm_r
+    400006: roman_arm_l.001
+    400008: roman_arm_l.002
+    400010: roman_arm_l.003
+    400012: roman_arm_l.004
+    400014: roman_arm_r.001
+    400016: roman_arm_r.002
+    400018: roman_arm_r.003
+    400020: roman_arm_r.004
+    400022: roman_body
+    400024: roman_body.001
+    400026: roman_body.002
+    400028: roman_body.003
+    400030: roman_body.004
+    400032: roman_griva
+    400034: roman_helmet
+    2100000: hair
+    2100002: skin
+    2100004: clothes
+    2100006: armor
+    2100008: griva
+    2100010: gold
+    2100012: Material
+    2100014: clothes_2
+    2300000: //RootNode
+    2300002: roman_arm_l
+    2300004: roman_arm_r
+    2300006: roman_arm_l.001
+    2300008: roman_arm_l.002
+    2300010: roman_arm_l.003
+    2300012: roman_arm_l.004
+    2300014: roman_arm_r.001
+    2300016: roman_arm_r.002
+    2300018: roman_arm_r.003
+    2300020: roman_arm_r.004
+    2300022: roman_body
+    2300024: roman_body.001
+    2300026: roman_body.002
+    2300028: roman_body.003
+    2300030: roman_body.004
+    2300032: roman_griva
+    2300034: roman_helmet
+    3300000: //RootNode
+    3300002: roman_arm_l
+    3300004: roman_arm_r
+    3300006: roman_arm_l.001
+    3300008: roman_arm_l.002
+    3300010: roman_arm_l.003
+    3300012: roman_arm_l.004
+    3300014: roman_arm_r.001
+    3300016: roman_arm_r.002
+    3300018: roman_arm_r.003
+    3300020: roman_arm_r.004
+    3300022: roman_body
+    3300024: roman_body.001
+    3300026: roman_body.002
+    3300028: roman_body.003
+    3300030: roman_body.004
+    3300032: roman_griva
+    3300034: roman_helmet
+    4300000: roman_body
+    4300002: roman_arm_l
+    4300004: roman_arm_r
+    4300006: roman_griva
+    4300008: roman_helmet
+    4300010: roman_body.004
+    4300012: roman_arm_r.004
+    4300014: roman_arm_l.004
+    4300016: roman_body.003
+    4300018: roman_arm_l.003
+    4300020: roman_arm_r.003
+    4300022: roman_body.002
+    4300024: roman_arm_l.002
+    4300026: roman_arm_r.002
+    4300028: roman_body.001
+    4300030: roman_arm_r.001
+    4300032: roman_arm_l.001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: armor
+    second: {fileID: 2100000, guid: 94bfb65431222cc438853f3c1ecebf6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: clothes
+    second: {fileID: 2100000, guid: 412bb8da9e7b57f4ca2c39b29e8b3cb4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hair
+    second: {fileID: 2100000, guid: f223e78aed9b9cc429c2436589073c4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: skin
+    second: {fileID: 2100000, guid: 144c10701bfdd254da65ac8791dd7cc1, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
