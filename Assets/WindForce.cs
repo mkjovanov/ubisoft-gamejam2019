@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class WindForce : MonoBehaviour
 {
+    public float DurationSecs = 5;
+
+    float CreationTime;
     // Start is called before the first frame update
     void Start()
     {
-        
+        CreationTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Time.time - CreationTime > DurationSecs)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * Random.Range(12,16), ForceMode.Impulse);
+        if (other.gameObject.GetComponent<Rigidbody>() != null)
+        {
+            other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * Random.Range(1,2), ForceMode.Impulse);
+        }
     }
 }

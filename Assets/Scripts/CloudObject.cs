@@ -2,8 +2,28 @@
 
 public class CloudObject : MonoBehaviour
 {
-    private void OnTriggerStay(Collider other)
+    public float DurationSecs = 10;
+
+    float CreationTime;
+
+    void Start()
     {
-        other.GetComponent<FlameableObject>().IsOnFire = false;
+        CreationTime = Time.time;
+    }
+
+    void Update()
+    {
+        if (Time.time - CreationTime > DurationSecs)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<FlameableObject>())
+        {
+            other.GetComponent<FlameableObject>().IsOnFire = false;
+        }
     }
 }
