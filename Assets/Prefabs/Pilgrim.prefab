@@ -201,5 +201,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  forceMult: 30
   gotoDestination: {x: 0, y: 0, z: 0}
   areaMask: 0
+  grounded: 0
+  raycastLayermask:
+    serializedVersion: 2
+    m_Bits: 512
