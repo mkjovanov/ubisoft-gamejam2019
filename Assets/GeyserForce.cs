@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WindForce : MonoBehaviour
+public class GeyserForce : MonoBehaviour
 {
     public float DurationSecs = 5;
 
@@ -22,12 +22,12 @@ public class WindForce : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.GetComponent<Rigidbody>() != null)
         {
-            other.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(0f, 10f) - 5, Random.Range(10f, 14f), Random.Range(0f, 10f) - 5), ForceMode.Impulse);
-            other.gameObject.GetComponent<Rigidbody>().AddTorque(transform.up * Random.Range(10f, 18f));
+            other.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(0, .8f - (other.transform.position.y - other.transform.localScale.y/2f - transform.position.y + transform.localScale.y/2f)/3f, 0), ForceMode.Impulse);
+            other.gameObject.GetComponent<Rigidbody>().AddTorque(transform.up * Random.Range(0f,2f));
         }
     }
 }

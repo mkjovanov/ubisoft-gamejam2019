@@ -21,7 +21,7 @@ public class GeyserSpawner : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, 200, LayerHit))
         {
             var hitPos = hit.point;
-            Instantiate(GeyserObject, hitPos + new Vector3(0, .5f, 0), Quaternion.identity);
+            Instantiate(GeyserObject, hitPos + new Vector3(0, 1.5f, 0), Quaternion.identity);
         }
     }
     

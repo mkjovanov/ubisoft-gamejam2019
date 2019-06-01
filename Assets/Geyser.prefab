@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3932717703029137437}
   - component: {fileID: 3932717703029137426}
   - component: {fileID: 3932717703029137438}
-  - component: {fileID: 8311847096228431552}
+  - component: {fileID: 6222135670258036883}
   m_Layer: 0
   m_Name: Geyser
   m_TagString: Untagged
@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3932717703029137427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.64, y: 1, z: -0.1}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalPosition: {x: -2.64, y: 1.5, z: -0.1}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -109,7 +109,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8311847096228431552
+--- !u!114 &6222135670258036883
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3932717703029137427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: def7d9335b954e04f80ee095536526ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 08716a946c029c64893ce65bcf132bae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DurationSecs: 5
