@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 534669906}
   - component: {fileID: 534669907}
   - component: {fileID: 534669908}
+  - component: {fileID: 534669909}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -378,6 +379,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RainObject: {fileID: 6432675670584554522, guid: d91b21514eb34634dbaa28ad350433d5,
+    type: 3}
+  Ground: {fileID: 912513900}
+  LayerHit:
+    serializedVersion: 2
+    m_Bits: 512
+--- !u!114 &534669909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a8b4a4d1ee81a649bf77113ef3291a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GeyserObject: {fileID: 3932717703029137427, guid: a275610b3564d2f40aeb669bf7107b77,
     type: 3}
   Ground: {fileID: 912513900}
   LayerHit:
