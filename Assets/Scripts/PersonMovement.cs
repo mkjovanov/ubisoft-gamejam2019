@@ -8,76 +8,44 @@ public class PersonMovement : MonoBehaviour
 {
     public Transform target;
 
-    NavMeshAgent _agent;
-    NavMeshAgent agent { get { if (!_agent) _agent = GetComponent<NavMeshAgent>(); return _agent; } }
-
     Rigidbody _rb;
     Rigidbody rb { get { if (!_rb) _rb = GetComponent<Rigidbody>(); return _rb; } }
 
     public Vector3 gotoDestination;
 
+    public int areaMask;
+    NavMeshPath path;
+    Vector3[] results;
+    public NavMeshQueryFilter filter;
+
     public void GoTo(Vector3 pos)
     {
         gotoDestination = pos;
-        agent.destination = pos;
     }
 
     private void Start()
     {
-        //agent.updatePosition = false;
-        //agent.updateRotation = false;
+        filter = new NavMeshQueryFilter();
+        filter.areaMask = 1;
+        results = new Vector3[2];
+        path = new NavMeshPath();
 
-        GoTo(target.position);
-    }
-
-    bool knocking;
-
-    public void Knock(Vector3 force)
-    {
-        Vector3 velo = agent.velocity;
-        agent.enabled = false;
-        rb.isKinematic = false;
-        rb.velocity = velo;
-        rb.AddForce(force * 500);
-        knocking = true;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (!agent.enabled && knocking)
-        {
-            knocking = false;
-        }
-    }
-
-    void TurnNavmeshOn()
-    {
-        agent.enabled = true;
-        knocking = false;
-        rb.isKinematic = true;
-
-        agent.SetDestination(gotoDestination);
+        if (target)
+            GoTo(target.position);
     }
 
     void Update()
     {
-        Debug.Log(agent.isOnNavMesh);
-
-        if (Input.GetKeyDown(KeyCode.G))
-            Knock(Vector3.up);
-
-        if (!agent.enabled && !knocking && agent.isOnNavMesh)
+        if (NavMesh.CalculatePath(transform.position, gotoDestination, filter, path))
         {
-            agent.SetDestination(gotoDestination);
+            path.GetCornersNonAlloc(results);
+
+            Vector3 diff = results[1] - transform.position;
+            diff.y = Mathf.Clamp(diff.y, 0, Mathf.Infinity);
+
+            rb.AddForce(diff.normalized * 10);
+
+            Debug.DrawRay(results[1], Vector3.up, Color.red);
         }
-
-        //Vector3 velo = agent.desiredVelocity;
-        //rb.velocity = velo;
-
-        //agent.velocity = Vector3.right;
-
-        //rb.AddForce(velo, ForceMode.VelocityChange);
-
-        //agent.Warp(transform.position);
     }
 }
