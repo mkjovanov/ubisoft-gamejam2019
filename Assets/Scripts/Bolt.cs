@@ -8,6 +8,10 @@ public class Bolt : MonoBehaviour
 
     public bool testOnSpace;
 
+    private void Start()
+    {
+        Opizdi(transform.position + Vector3.up * 8, transform.position);
+    }
     void Update()
     {
         if (testOnSpace && Input.GetKeyDown(KeyCode.Space))
