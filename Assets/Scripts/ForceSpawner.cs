@@ -8,7 +8,7 @@ public class ForceSpawner : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && GameManager.Instance.IsForceActivated)
         {
             SpawnForce();
         }
