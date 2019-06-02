@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 7344259230083881405}
   - component: {fileID: 7849115361405841036}
   - component: {fileID: 3057460103356547643}
-  - component: {fileID: 3057460103356547642}
+  - component: {fileID: 6497293104090990699}
   m_Layer: 0
   m_Name: Roman
   m_TagString: Untagged
@@ -142,7 +142,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &3057460103356547642
+--- !u!114 &6497293104090990699
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3057460103356547636}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aed75b7b6c6ba3f449809866eab8b4ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 78f515b396b88384daf6b1d6cbdf885e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}

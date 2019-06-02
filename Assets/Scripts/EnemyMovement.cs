@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public Transform target;
+    public Text gameOverText;
+    public PersonMovement target;
     private int currentTargetIndex;
 
     Rigidbody _rb;
@@ -36,9 +38,10 @@ public class EnemyMovement : MonoBehaviour
         results = new Vector3[2];
         path = new NavMeshPath();
 
+        target = FindObjectOfType<PersonMovement>();
         if (target != null)
         {
-            GoTo(target.position);
+            GoTo(target.transform.position);
             currentTargetIndex = 0;
         }
     }
@@ -75,6 +78,7 @@ public class EnemyMovement : MonoBehaviour
         float groundVelocity = groundDiff.magnitude;
         groundTrack += groundVelocity;
 
+        GoTo(target.transform.position);
         if (NavMesh.CalculatePath(transform.position, gotoDestination, filter, path))
         {
             path.GetCornersNonAlloc(results);
@@ -107,25 +111,21 @@ public class EnemyMovement : MonoBehaviour
         float angleR = Mathf.Sin(groundTrack * 2 + Mathf.PI) * 60;
         leftArm.transform.localRotation = Quaternion.Euler(angleL, 0, 0);
         rightArm.transform.localRotation = Quaternion.Euler(angleR, 0, 0);
-
+        
         // kill
-        if (Vector3.Distance(target.position, transform.position) < 1.5f)
+        if (Vector3.Distance(target.transform.position, transform.position) < 1.5f)
         {
+            if (FindObjectsOfType<PersonMovement>() == null || FindObjectsOfType<PersonMovement>().Length == 1)
+            {
+                gameOverText.enabled = true;
+            }
             Destroy(target.gameObject);
             PersonMovement person = FindObjectOfType<PersonMovement>();
             if (person != null)
             {
-                target = person.transform;
+                target = person;
             }
         }
     }
 
-    public void nextTarget()
-    {
-        if (targets != null && targets.Length > currentTargetIndex + 1)
-        {
-            currentTargetIndex++;
-            GoTo(targets[currentTargetIndex].position);
-        }
-    }
 }

@@ -8,6 +8,7 @@ public class Bolt : MonoBehaviour
 
     public bool testOnSpace;
     public GameObject EffectGround;
+    public GameObject Explosion;
 
     private void Start()
     {
@@ -40,7 +41,8 @@ public class Bolt : MonoBehaviour
         }
 
         transform.position = startPoint + diff;
-        Instantiate(EffectGround, new Vector3(endPoint.x, endPoint.y-1, endPoint.z), Quaternion.identity);
+        Instantiate(EffectGround, new Vector3(endPoint.x, endPoint.y - 1, endPoint.z), Quaternion.identity);
+        Instantiate(Explosion, new Vector3(endPoint.x, endPoint.y - 1, endPoint.z), Quaternion.identity);
     }
 
     public void Opizdi(Vector3 from, Vector3 to)
