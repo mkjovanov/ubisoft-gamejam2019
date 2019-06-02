@@ -26,7 +26,8 @@ public class WindForce : MonoBehaviour
     {
         if (other.gameObject.GetComponent<Rigidbody>() != null)
         {
-            other.gameObject.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(0f, 10f) - 5, Random.Range(10f, 14f), Random.Range(0f, 10f) - 5), ForceMode.Impulse);
+            other.gameObject.GetComponent<Rigidbody>().AddForce(
+                (transform.position-other.transform.position).normalized.x * 5, Random.Range(10f, 14f), (transform.position - other.transform.position).normalized.z * 5, ForceMode.Impulse);
             other.gameObject.GetComponent<Rigidbody>().AddTorque(transform.up * Random.Range(10f, 18f));
         }
     }

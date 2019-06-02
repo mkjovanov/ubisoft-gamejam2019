@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class NextLevel : MonoBehaviour
 {
     private int delayCount = 200;
     private bool triggered = false;
+    public Text label;
 
     private void Update()
     {
@@ -25,6 +27,7 @@ public class NextLevel : MonoBehaviour
         if (other.gameObject.GetComponent<PersonMovement>() != null)
         {
             triggered = true;
+            label.enabled = true;
         }
     }
 }
