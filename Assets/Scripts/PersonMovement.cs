@@ -6,7 +6,8 @@ using UnityEngine.AI;
 
 public class PersonMovement : MonoBehaviour
 {
-    public Transform target;
+    public Transform[] targets;
+    private int currentTargetIndex;
 
     Rigidbody _rb;
     Rigidbody rb { get { if (!_rb) _rb = GetComponent<Rigidbody>(); return _rb; } }
@@ -35,8 +36,11 @@ public class PersonMovement : MonoBehaviour
         results = new Vector3[2];
         path = new NavMeshPath();
 
-        if (target)
-            GoTo(target.position);
+        if (targets != null && targets.Length > 0)
+        {
+            GoTo(targets[0].position);
+            currentTargetIndex = 0;
+        }
     }
 
     public bool grounded;
@@ -103,5 +107,14 @@ public class PersonMovement : MonoBehaviour
         float angleR = Mathf.Sin(groundTrack * 2 + Mathf.PI) * 60;
         leftArm.transform.localRotation = Quaternion.Euler(angleL, 0, 0);
         rightArm.transform.localRotation = Quaternion.Euler(angleR, 0, 0);
+    }
+
+    public void nextTarget()
+    {
+        if (targets != null && targets.Length > currentTargetIndex + 1)
+        {
+            currentTargetIndex++;
+            GoTo(targets[currentTargetIndex].position);
+        }
     }
 }

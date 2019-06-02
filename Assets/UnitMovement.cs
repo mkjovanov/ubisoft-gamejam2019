@@ -16,7 +16,7 @@ public class UnitMovement : MonoBehaviour
     {
         if (jumpCounter-- < 1)
         {
-            GetComponent<Rigidbody>().AddForce(Vector3.up * 3, ForceMode.Impulse);
+            //GetComponent<Rigidbody>().AddForce(Vector3.up * 3, ForceMode.Impulse);
             jumpCounter = Random.Range(25, 75);
         }
     }
