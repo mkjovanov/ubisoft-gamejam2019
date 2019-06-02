@@ -538,6 +538,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BurningTime: 5
   IsOnFire: 0
+  progressionTrigger: 1
+  FireObject: {fileID: 121928, guid: 313e5c5f850e5be429d4a6787a725f73, type: 3}
 --- !u!64 &95822435
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1224,7 +1226,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &177786185
 PrefabInstance:
@@ -2259,9 +2261,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3018324124952068968, guid: 2e2d848b9eeea6e47b159fa7f7254ca7,
         type: 3}
+      propertyPath: targets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018324124952068968, guid: 2e2d848b9eeea6e47b159fa7f7254ca7,
+        type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 618646550}
+    - target: {fileID: 3018324124952068968, guid: 2e2d848b9eeea6e47b159fa7f7254ca7,
+        type: 3}
+      propertyPath: targets.Array.data[0]
+      value: 
+      objectReference: {fileID: 618646550}
+    - target: {fileID: 3018324124952068968, guid: 2e2d848b9eeea6e47b159fa7f7254ca7,
+        type: 3}
+      propertyPath: targets.Array.data[1]
+      value: 
+      objectReference: {fileID: 198533816}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e2d848b9eeea6e47b159fa7f7254ca7, type: 3}
 --- !u!1001 &361233542
@@ -3114,7 +3131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 31ef2ed6d1812ca48b0f4c2095bf67da, type: 3}
       propertyPath: m_RootOrder
-      value: 46
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 31ef2ed6d1812ca48b0f4c2095bf67da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5198,7 +5215,7 @@ Transform:
   m_LocalScale: {x: 64, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 44
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: -0.054, y: -0.94000006, z: -0.64100003}
 --- !u!1001 &915487007
 PrefabInstance:
@@ -10311,7 +10328,7 @@ PrefabInstance:
     - target: {fileID: 4630730067410371162, guid: 0ac9a40ccdb38c3419daf86f9bd2c418,
         type: 3}
       propertyPath: m_RootOrder
-      value: 45
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 4630730067410371162, guid: 0ac9a40ccdb38c3419daf86f9bd2c418,
         type: 3}
