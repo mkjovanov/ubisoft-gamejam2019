@@ -5,6 +5,7 @@ public class FlameableObject : MonoBehaviour
     public float BurningTime = 2f;
     public bool IsOnFire = false;
     public bool progressionTrigger = false;
+    public Vector3 fireOffset;
     public GameObject FireObject;
     private bool firesSpawned = false;
     private float _colorChange = 0;
@@ -15,7 +16,7 @@ public class FlameableObject : MonoBehaviour
         {
             if (!firesSpawned)
             {
-                Instantiate(FireObject, transform.position + transform.up * 5, Quaternion.identity);
+                Instantiate(FireObject, transform.position + fireOffset, Quaternion.identity);
                 firesSpawned = true;
             }
             Renderer rend = GetComponent<Renderer>();
