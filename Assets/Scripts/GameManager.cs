@@ -1,15 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private static GameManager _instance;
+    public static GameManager Instance { get { return _instance; } }
+
+    private void Awake()
     {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
     }
-    
+
+    [HideInInspector]
+    public bool IsFireActivated;
+    [HideInInspector]
+    public bool IsForceActivated;
+    [HideInInspector]
+    public bool IsRainyCloudActivated;
+
+    public Button FireButton;
+    public Button ForceButton;
+    public Button RainyCloudButton;
+
     void FixedUpdate()
     {
+        IsFireActivated = FireButton.interactable;
+        IsForceActivated = ForceButton.interactable;
+        IsRainyCloudActivated = RainyCloudButton.interactable;
     }
 }
