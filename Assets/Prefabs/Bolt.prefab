@@ -151,6 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxBoldWidth: 4
   testOnSpace: 0
+  EffectGround: {fileID: 1614648838348040, guid: 6b12f08cfea33d1429a5fb9ca7e5f9fe,
+    type: 3}
 --- !u!82 &9108098051964100289
 AudioSource:
   m_ObjectHideFlags: 0
@@ -161,8 +163,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 7df6390ec35673c44a76f8c854dee659, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

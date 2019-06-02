@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ThunderSpawner : MonoBehaviour
 {
-    public Bolt Bolt;
+    public GameObject Bolt;
     public GameObject Ground;
     public LayerMask LayerHit;
 

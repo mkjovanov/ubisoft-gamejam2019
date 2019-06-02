@@ -7,10 +7,12 @@ public class Bolt : MonoBehaviour
     public float maxBoldWidth = 4;
 
     public bool testOnSpace;
+    public GameObject EffectGround;
 
     private void Start()
     {
         Opizdi(transform.position + Vector3.up * 8, transform.position);
+        GetComponent<AudioSource>().Play();
     }
     void Update()
     {
@@ -38,6 +40,7 @@ public class Bolt : MonoBehaviour
         }
 
         transform.position = startPoint + diff;
+        Instantiate(EffectGround, new Vector3(endPoint.x, endPoint.y-1, endPoint.z), Quaternion.identity);
     }
 
     public void Opizdi(Vector3 from, Vector3 to)
