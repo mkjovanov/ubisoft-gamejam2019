@@ -6774,15 +6774,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec2afb0a0efdbad439af9cbb716bf253, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 262.28494
+      value: 262.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec2afb0a0efdbad439af9cbb716bf253, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 213.1617
+      value: 211.92
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec2afb0a0efdbad439af9cbb716bf253, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.5740023
+      value: 2.32
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec2afb0a0efdbad439af9cbb716bf253, type: 3}
       propertyPath: m_LocalRotation.x
@@ -10346,15 +10346,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec2afb0a0efdbad439af9cbb716bf253, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 261.24973
+      value: 261.26477
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec2afb0a0efdbad439af9cbb716bf253, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 213.1617
+      value: 211.92
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec2afb0a0efdbad439af9cbb716bf253, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.5005884
+      value: 3.246586
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec2afb0a0efdbad439af9cbb716bf253, type: 3}
       propertyPath: m_LocalRotation.x
@@ -13322,6 +13322,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3932717703029137437, guid: bad4a2e185b8ea24a8b7a7c950212129,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8311847096228431552, guid: bad4a2e185b8ea24a8b7a7c950212129,
         type: 3}
       propertyPath: DurationSecs
@@ -15388,15 +15393,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec2afb0a0efdbad439af9cbb716bf253, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 261.82455
+      value: 261.8396
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec2afb0a0efdbad439af9cbb716bf253, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 213.1617
+      value: 211.92
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec2afb0a0efdbad439af9cbb716bf253, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.989624
+      value: 2.7356217
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ec2afb0a0efdbad439af9cbb716bf253, type: 3}
       propertyPath: m_LocalRotation.x
