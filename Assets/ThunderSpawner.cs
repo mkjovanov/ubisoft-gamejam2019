@@ -10,7 +10,7 @@ public class ThunderSpawner : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetMouseButtonDown(0) && GameManager.Instance.IsFireActivated)
         {
             SpawnThunder();
         }
