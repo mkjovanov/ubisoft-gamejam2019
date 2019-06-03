@@ -29,7 +29,7 @@ public class ExplosionForce : MonoBehaviour
         {
             var pos = other.gameObject.transform.position;
             other.enabled = false;
-            Destroy(other);
+            Destroy(other.gameObject);
 
             for (int i = 0; i < 5; i++)
             {

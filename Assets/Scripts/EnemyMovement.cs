@@ -78,7 +78,8 @@ public class EnemyMovement : MonoBehaviour
         float groundVelocity = groundDiff.magnitude;
         groundTrack += groundVelocity;
 
-        GoTo(target.transform.position);
+        if (target)
+            GoTo(target.transform.position);
         if (NavMesh.CalculatePath(transform.position, gotoDestination, filter, path))
         {
             path.GetCornersNonAlloc(results);
@@ -111,7 +112,7 @@ public class EnemyMovement : MonoBehaviour
         float angleR = Mathf.Sin(groundTrack * 2 + Mathf.PI) * 60;
         leftArm.transform.localRotation = Quaternion.Euler(angleL, 0, 0);
         rightArm.transform.localRotation = Quaternion.Euler(angleR, 0, 0);
-        
+
         // kill
         if (Vector3.Distance(target.transform.position, transform.position) < 1.5f)
         {

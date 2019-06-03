@@ -16,7 +16,7 @@ public class FlameableObject : MonoBehaviour
         {
             if (!firesSpawned)
             {
-                Instantiate(FireObject, transform.position + fireOffset, Quaternion.identity);
+                //Instantiate(FireObject, transform.position + fireOffset, Quaternion.identity);
                 firesSpawned = true;
             }
             Renderer rend = GetComponent<Renderer>();
